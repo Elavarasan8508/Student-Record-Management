@@ -90,6 +90,17 @@
     </style>
 </head>
 <body>
+    <!-- Place this inside the <body> tag at the top -->
+<div style="background: #f8f9fa; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+  <h3 style="margin: 0;">Student Management</h3>
+  {% if session.get('username') %}
+    <div>
+      👋 Welcome, <strong>{{ session['username'] }}</strong> |
+      <a href="{{ url_for('logout') }}" style="color: red; text-decoration: none; font-weight: bold;">Logout</a>
+    </div>
+  {% endif %}
+</div>
+
     <div class="form-container">
         <div class="form-icon">
             <i class="bi bi-pencil-square"></i>
